@@ -110,7 +110,7 @@ def combine(tt1, tt2, output_file):
         b3[d1['annotations'][i]['id']] = i
     b4 = {}
     for i, j in enumerate(d2['annotations']):
-        b4[d2['annotations'][i]['id']] = max(b3) + i + 1
+        b4[d2['annotations'][i]['id']] = (max(b3) if len(b3) > 0 else 0) + i + 1
 
     for i, j in enumerate(d1['annotations']):
         d1['annotations'][i]['id'] = b3[d1['annotations'][i]['id']]
